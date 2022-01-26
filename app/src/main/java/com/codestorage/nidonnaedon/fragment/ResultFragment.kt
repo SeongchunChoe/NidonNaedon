@@ -1,16 +1,18 @@
 package com.codestorage.nidonnaedon.fragment
 
-import android.content.DialogInterface
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.codestorage.nidonnaedon.ResultCalculator
 import com.codestorage.nidonnaedon.common.BaseFragment
 import com.codestorage.nidonnaedon.common.DividerItemDeco
+import com.codestorage.nidonnaedon.databinding.FragmentResultBinding
+import com.codestorage.nidonnaedon.databinding.ResultHeaderItemBinding
+import com.codestorage.nidonnaedon.databinding.ResultItemBinding
+import com.codestorage.nidonnaedon.vm.HoleInfo
 import com.codestorage.nidonnaedon.vm.ResultInfo
 import com.codestorage.nidonnaedon.vm.StartInfo
-import com.codestorage.nidonnaedon.databinding.*
-import com.codestorage.nidonnaedon.vm.HoleInfo
 import com.markjmind.uni.mapper.annotiation.AutoBinder
+import com.markjmind.uni.mapper.annotiation.OnClick
 import com.markjmind.uni.mapper.annotiation.Param
 import com.muabe.uniboot.extension.recycler.UniRecyclerAdapter
 import com.muabe.uniboot.extension.recycler.UniViewHolder
@@ -48,15 +50,9 @@ class ResultFragment : BaseFragment<FragmentResultBinding>() {
         binder.recycler.addItemDecoration(DividerItemDeco(context, LinearLayoutManager.VERTICAL))
     }
 
-    override fun isOnBackPressed(): Boolean {
-        showConfirm("게임을 종료하시겠습니까?") { dialog, which ->
-            if (which == DialogInterface.BUTTON_POSITIVE) {
-                activity?.finish()
-            }else{
-                onBackPressed()
-            }
-        }
-        return true
+    @OnClick
+    fun finishGame(view: View){
+        activity?.finish()
     }
 
     internal class Holder(view: View) : UniViewHolder<ResultInfo, ResultItemBinding>(view) {

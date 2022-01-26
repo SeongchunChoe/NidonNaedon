@@ -18,6 +18,8 @@ class StartInfo: BaseObservable() {
         private set
     var double: Int = 4
         private set
+    var danwi: Int = 1000
+        private set
 
     @Bindable
     var isDoubleStart = false
@@ -72,5 +74,13 @@ class StartInfo: BaseObservable() {
             field = value
             double = value.toIntOrNull()?:0
             notifyPropertyChanged(BR.doubleStr)
+        }
+
+    @Bindable
+    var danwiStr: String = "1000"
+        set(value) {
+            field = value
+            danwi = value.toIntOrNull()?:0
+            notifyPropertyChanged(BR.danwiStr)
         }
 }

@@ -1,10 +1,14 @@
 package com.codestorage.nidonnaedon.common
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.widget.EditText
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.codestorage.nidonnaedon.R
+import java.text.NumberFormat
+import java.util.*
 
 object BindAdapters {
     @BindingAdapter(value = ["near_background_near_idx", "near_background_my_idx"], requireAll = true)
@@ -15,6 +19,13 @@ object BindAdapters {
         }else{
             et.setBackgroundResource(R.drawable.bg_near_nor)
         }
+    }
+
+    @SuppressLint("SetTextI18n")
+    @BindingAdapter("convert_money_type")
+    @JvmStatic
+    fun setVisible(v: TextView, winPoint: Int) {
+        v.text = "${NumberFormat.getNumberInstance(Locale.US).format(winPoint)} 원"
     }
 
     /*

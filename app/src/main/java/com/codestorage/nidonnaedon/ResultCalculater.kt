@@ -12,14 +12,14 @@ object ResultCalculator {
             this.forEachIndexed{ index, value ->
                 for(x in this.indices){
                     if(index != x) {
-                        earnList[index] += (this[x] - value)
+                        earnList[index] += (value - this[x])
                     }
                 }
             }
         }
 
         calculate(startInfo, convertData(startInfo.entryList, holeInfo), earnList, startInfo.isDoubleStart)
-        return earnList
+        return earnList.map { it.times(startInfo.danwi) }.toIntArray()
     }
 
     private fun convertData(entryList: List<EntryInfo>, holeInfoList: List<HoleInfo>): List<Pair<Pair<String, Int>, IntArray>> {
@@ -46,14 +46,14 @@ object ResultCalculator {
     private fun calc(startInfo: StartInfo, parPoint: Pair<Pair<String, Int>, IntArray>, isDouble: Boolean): IntArray{
         val earnList = IntArray(parPoint.second.size)
 
-        //Par3이고 near가 있는 경우
-        if(parPoint.first.first == "3" && parPoint.first.second > -1){
-            parPoint.second[parPoint.first.second] += if(parPoint.second[parPoint.first.second] > 0) startInfo.near else -startInfo.near
-        }
-
         //보너스 포인트 계산
         parPoint.second.forEachIndexed { index, value ->
             parPoint.second[index] -= getBonusPoint(startInfo, parPoint.first.first, value)
+        }
+
+        //Par3이고 near가 있는 경우
+        if(parPoint.first.first == "3" && parPoint.first.second > -1){
+            parPoint.second[parPoint.first.second] += if(parPoint.second[parPoint.first.second] > 0) startInfo.near else -startInfo.near
         }
 
         parPoint.second.forEachIndexed { index, value ->
