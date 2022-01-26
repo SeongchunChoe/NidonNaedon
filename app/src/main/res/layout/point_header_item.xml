@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="java.util.List&lt;com.codestorage.nidonnaedon.vm.HoleInfo&gt;" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:background="#A8EBFB"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="HOLE"/>
+
+            <TextView
+                android:id="@+id/hole1"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#A8EBFB"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@{vm.get(0).hole}"
+                tools:text="1" />
+
+            <TextView
+                android:id="@+id/hole2"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#A8EBFB"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@{vm.get(1).hole}"
+                tools:text="2" />
+
+            <TextView
+                android:id="@+id/hole3"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#A8EBFB"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@{vm.get(2).hole}"
+                tools:text="3" />
+
+            <TextView
+                android:id="@+id/hole4"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#A8EBFB"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@{vm.get(3).hole}"
+                tools:text="4" />
+
+            <TextView
+                android:id="@+id/hole5"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#A8EBFB"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@{vm.get(4).hole}"
+                tools:text="5" />
+
+            <TextView
+                android:id="@+id/hole6"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#A8EBFB"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@{vm.get(5).hole}"
+                tools:text="6" />
+
+            <TextView
+                android:id="@+id/hole7"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#A8EBFB"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@{vm.get(6).hole}"
+                tools:text="7" />
+
+            <TextView
+                android:id="@+id/hole8"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#A8EBFB"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@{vm.get(7).hole}"
+                tools:text="8" />
+
+            <TextView
+                android:id="@+id/hole9"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#A8EBFB"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@{vm.get(8).hole}"
+                tools:text="9" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:background="#ECECEC"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="PAR"/>
+
+            <EditText
+                android:id="@+id/par1"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#ECECEC"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:inputType="number"
+                android:maxLines="1"
+                android:text="@={vm.get(0).par}"
+                tools:text="4" />
+
+            <EditText
+                android:id="@+id/par2"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#ECECEC"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:inputType="number"
+                android:maxLines="1"
+                android:text="@={vm.get(1).par}"
+                tools:text="3" />
+
+            <EditText
+                android:id="@+id/par3"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#ECECEC"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:inputType="number"
+                android:maxLines="1"
+                android:text="@={vm.get(2).par}"
+                tools:text="5" />
+
+            <EditText
+                android:id="@+id/par4"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#ECECEC"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:inputType="number"
+                android:maxLines="1"
+                android:text="@={vm.get(3).par}"
+                tools:text="4" />
+
+            <EditText
+                android:id="@+id/par5"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#ECECEC"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:inputType="number"
+                android:maxLines="1"
+                android:text="@={vm.get(4).par}"
+                tools:text="3" />
+
+            <EditText
+                android:id="@+id/par6"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#ECECEC"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:inputType="number"
+                android:maxLines="1"
+                android:text="@={vm.get(5).par}"
+                tools:text="5" />
+
+            <EditText
+                android:id="@+id/par7"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#ECECEC"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:inputType="number"
+                android:maxLines="1"
+                android:text="@={vm.get(6).par}"
+                tools:text="4" />
+
+            <EditText
+                android:id="@+id/par8"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#ECECEC"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:inputType="number"
+                android:maxLines="1"
+                android:text="@={vm.get(7).par}"
+                tools:text="4" />
+
+            <EditText
+                android:id="@+id/par9"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="#ECECEC"
+                android:layout_marginStart="1dp"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:inputType="number"
+                android:maxLines="1"
+                android:text="@={vm.get(8).par}"
+                tools:text="4" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

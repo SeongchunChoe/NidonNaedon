@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <data>
+
+        <variable
+            name="entryInfoVm"
+            type="com.codestorage.nidonnaedon.vm.EntryInfo" />
+
+        <variable
+            name="startInfoVm"
+            type="com.codestorage.nidonnaedon.vm.StartInfo" />
+    </data>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@string/label_start_game"
+                android:textSize="@dimen/main_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/llEntryArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView">
+
+                <EditText
+                    android:id="@+id/etName"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:hint="@string/label_name"
+                    android:maxLength="6"
+                    android:maxLines="1"
+                    tools:text="나나나나나나"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"
+                    android:nextFocusRight="@+id/etHandy"
+                    android:text="@={entryInfoVm.name}" />
+
+                <EditText
+                    android:id="@+id/etHandy"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:maxLength="3"
+                    android:maxLines="1"
+                    android:hint="@string/label_handy"
+                    android:inputType="numberSigned"
+                    tools:text="19"
+                    android:text="@={entryInfoVm.handyStr}" />
+
+                <Button
+                    android:id="@+id/addPlayer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:enabled="@{entryInfoVm.enable}"
+                    android:text="@string/label_add" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintBottom_toTopOf="@id/llAddPointArea"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llEntryArea"
+                tools:listitem="@layout/entry_item" />
+
+            <LinearLayout
+                android:id="@+id/llAddPointArea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recycler">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_double_start"
+                    android:checked="@{startInfoVm.doubleStart}"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_buddy"
+                        android:textSize="@dimen/label_middle" />
+
+                    <EditText
+                        android:id="@+id/etBuddy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@android:drawable/editbox_background_normal"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:maxLines="1"
+                        android:nextFocusRight="@+id/etEagle"
+                        android:text="@={startInfoVm.buddyStr}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/label_eagle"
+                        android:textSize="@dimen/label_middle" />
+
+                    <EditText
+                        android:id="@+id/etEagle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@android:drawable/editbox_background_normal"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:maxLines="1"
+                        android:nextFocusRight="@+id/etAlbatross"
+                        android:text="@={startInfoVm.eagleStr}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/label_albatross"
+                        android:textSize="@dimen/label_middle" />
+
+                    <EditText
+                        android:id="@+id/etAlbatross"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@android:drawable/editbox_background_normal"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:maxLines="1"
+                        android:nextFocusDown="@+id/etHoleInOne"
+                        android:text="@={startInfoVm.albatrossStr}" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_hole_in_one"
+                        android:textSize="@dimen/label_middle" />
+
+                    <EditText
+                        android:id="@+id/etHoleInOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@android:drawable/editbox_background_normal"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:maxLines="1"
+                        android:nextFocusRight="@+id/etNear"
+                        android:text="@={startInfoVm.holeInOneStr}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/label_near"
+                        android:textSize="@dimen/label_middle" />
+
+                    <EditText
+                        android:id="@+id/etNear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@android:drawable/editbox_background_normal"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:maxLines="1"
+                        android:nextFocusRight="@+id/etDouble"
+                        android:text="@={startInfoVm.nearStr}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:text="@string/label_double"
+                        android:textSize="@dimen/label_middle" />
+
+                    <EditText
+                        android:id="@+id/etDouble"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@android:drawable/editbox_background_normal"
+                        android:gravity="center"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:maxLines="1"
+                        android:text="@={startInfoVm.doubleStr}" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <Button
+                android:id="@+id/startGame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_start_game"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
