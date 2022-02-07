@@ -94,15 +94,17 @@ class InputPointFragment : BaseFragment<FragmentInputPointBinding>() {
             val holeIndex = ((view as TextView).text.toString().toInt() % 9) - 1
             val holeInfo = item[holeIndex]
             if(holeInfo.par == "3"){
-                showNearCheckPopup(view.context, holeInfo, holeIndex)
+                showNearCheckPopup(view.context, holeInfo)
             }
         }
 
-        private fun showNearCheckPopup(context: Context, holeInfo: HoleInfo, holeIndex: Int){
+        private fun showNearCheckPopup(context: Context, holeInfo: HoleInfo){
             MaterialAlertDialogBuilder(context)
                 .setTitle("Hole ${holeInfo.hole} - Near player 선택하기")
-                .setSingleChoiceItems(fragment.startInfo.entryList.map { it.name }.toTypedArray(), -1) { dialog, which ->
-                    item[holeIndex].near = which
+                .setNegativeButton("닫기", null)
+                .setPositiveButton("선택취소") { _, _ -> holeInfo.near = -1 }
+                .setSingleChoiceItems(fragment.startInfo.entryList.map { it.name }.toTypedArray(), holeInfo.near) { dialog, which ->
+                    holeInfo.near = which
                     dialog.dismiss()
                 }
                 .show()
