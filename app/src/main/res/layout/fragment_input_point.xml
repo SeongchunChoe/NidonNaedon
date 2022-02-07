@@ -15,49 +15,86 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <FrameLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvFirst"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@color/default_line"
-                android:paddingTop="1dp"
-                android:paddingStart="1dp"
-                android:paddingEnd="1dp"
-                tools:itemCount="8"
-                tools:listitem="@layout/point_row_item" />
-        </FrameLayout>
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/label_input_result"
+                    android:textSize="@dimen/main_title"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="30dp"/>
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvSecond"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@color/default_line"
-                android:paddingTop="1dp"
-                android:paddingStart="1dp"
-                android:paddingEnd="1dp"
-                tools:itemCount="8"
-                tools:listitem="@layout/point_row_item" />
-        </FrameLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvFirst"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@color/default_line"
+                        android:paddingTop="1dp"
+                        android:paddingStart="1dp"
+                        android:paddingEnd="1dp"
+                        tools:itemCount="8"
+                        tools:listitem="@layout/point_row_item" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvSecond"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@color/default_line"
+                        android:paddingTop="1dp"
+                        android:paddingStart="1dp"
+                        android:paddingEnd="1dp"
+                        tools:itemCount="8"
+                        tools:listitem="@layout/point_row_item" />
+                </FrameLayout>
+            </LinearLayout>
+        </ScrollView>
 
 
-        <Button
-            android:id="@+id/showResult"
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/button_show_result"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"/>
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/modifyStartInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/button_modify_start_info" />
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/showResult"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/button_show_result" />
+        </LinearLayout>
+
     </LinearLayout>
 </layout>

@@ -15,7 +15,9 @@
     <string name="label_handy_what">핸디</string>
     <string name="button_start_game">게임 시작</string>
     <string name="button_show_result">결과보기</string>
+    <string name="button_modify_start_info">수정하기</string>
     <string name="label_result_game">게임 결과</string>
+    <string name="label_input_result">점수 입력</string>
     <string name="label_double">배판인원</string>
     <string name="label_double_start">배판으로 시작</string>
     <string name="button_close_app">게임 종료 하기</string>

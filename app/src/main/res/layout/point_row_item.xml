@@ -43,8 +43,11 @@
             android:layout_marginStart="1dp"
             android:gravity="center"
             android:textSize="14sp"
+            android:imeOptions="actionNext"
+            android:nextFocusRight="@+id/par2"
             android:inputType="numberSigned"
             android:maxLines="1"
+            android:maxLength="2"
             android:padding="0dp"
             android:text="@={points.get(0).pointStr}"
             tools:text="4" />
@@ -60,8 +63,11 @@
             android:layout_marginStart="1dp"
             android:gravity="center"
             android:textSize="14sp"
+            android:imeOptions="actionNext"
+            android:nextFocusRight="@+id/par3"
             android:inputType="numberSigned"
             android:maxLines="1"
+            android:maxLength="2"
             android:text="@={points.get(1).pointStr}"
             tools:text="3" />
 
@@ -76,8 +82,11 @@
             android:layout_marginStart="1dp"
             android:gravity="center"
             android:textSize="14sp"
+            android:imeOptions="actionNext"
+            android:nextFocusRight="@+id/par4"
             android:inputType="numberSigned"
             android:maxLines="1"
+            android:maxLength="2"
             android:text="@={points.get(2).pointStr}"
             tools:text="5" />
 
@@ -92,8 +101,11 @@
             android:layout_marginStart="1dp"
             android:gravity="center"
             android:textSize="14sp"
+            android:imeOptions="actionNext"
+            android:nextFocusRight="@+id/par5"
             android:inputType="numberSigned"
             android:maxLines="1"
+            android:maxLength="2"
             android:text="@={points.get(3).pointStr}"
             tools:text="4" />
 
@@ -108,8 +120,11 @@
             android:layout_marginStart="1dp"
             android:gravity="center"
             android:textSize="14sp"
+            android:imeOptions="actionNext"
+            android:nextFocusRight="@+id/par6"
             android:inputType="numberSigned"
             android:maxLines="1"
+            android:maxLength="2"
             android:text="@={points.get(4).pointStr}"
             tools:text="3" />
 
@@ -124,8 +139,11 @@
             android:layout_marginStart="1dp"
             android:gravity="center"
             android:textSize="14sp"
+            android:imeOptions="actionNext"
+            android:nextFocusRight="@+id/par7"
             android:inputType="numberSigned"
             android:maxLines="1"
+            android:maxLength="2"
             android:text="@={points.get(5).pointStr}"
             tools:text="5" />
 
@@ -140,8 +158,11 @@
             android:layout_marginStart="1dp"
             android:gravity="center"
             android:textSize="14sp"
+            android:imeOptions="actionNext"
+            android:nextFocusRight="@+id/par8"
             android:inputType="numberSigned"
             android:maxLines="1"
+            android:maxLength="2"
             android:text="@={points.get(6).pointStr}"
             tools:text="4" />
 
@@ -156,8 +177,11 @@
             android:layout_marginStart="1dp"
             android:gravity="center"
             android:textSize="14sp"
+            android:imeOptions="actionNext"
+            android:nextFocusRight="@+id/par9"
             android:inputType="numberSigned"
             android:maxLines="1"
+            android:maxLength="2"
             android:text="@={points.get(7).pointStr}"
             tools:text="4" />
 
@@ -172,8 +196,11 @@
             android:layout_marginStart="1dp"
             android:gravity="center"
             android:textSize="14sp"
+            android:imeOptions="actionNext"
+            android:nextFocusRight="@+id/par1"
             android:inputType="numberSigned"
             android:maxLines="1"
+            android:maxLength="2"
             android:text="@={points.get(8).pointStr}"
             tools:text="4" />
     </LinearLayout>

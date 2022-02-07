@@ -27,4 +27,11 @@ class ResultInfo: BaseObservable() {
             notifyPropertyChanged(BR.winningPoint)
         }
 
+    @Bindable
+    var handy: Int = 0
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.handy)
+        }
+
 }

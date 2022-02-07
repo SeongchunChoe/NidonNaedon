@@ -41,7 +41,10 @@ object ResultCalculator {
     }
 
     private fun isNextDouble(startInfo: StartInfo, par: String, pointList: IntArray) =
-        par.isNotEmpty() && (pointList.maxOrNull()!! > par.toInt()-1 || pointList.map { point -> pointList.count { it == point } }.maxOrNull()!! > startInfo.double-1)
+        par.isNotEmpty() && (
+                pointList.maxOrNull()!! > par.toInt()-1//양파 이상
+                || pointList.count { it == pointList[0] } == startInfo.entryList.size//전원이 동타
+                || pointList.map { point -> pointList.count { it == point } }.maxOrNull()!! > startInfo.double-1)//지정된 동타인원 이상
 
     private fun calc(startInfo: StartInfo, parPoint: Pair<Pair<String, Int>, IntArray>, isDouble: Boolean): IntArray{
         val earnList = IntArray(parPoint.second.size)

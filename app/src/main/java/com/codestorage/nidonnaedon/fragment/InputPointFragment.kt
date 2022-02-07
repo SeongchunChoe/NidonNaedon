@@ -1,7 +1,6 @@
 package com.codestorage.nidonnaedon.fragment
 
 import android.content.Context
-import android.content.DialogInterface
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,52 +24,43 @@ class InputPointFragment : BaseFragment<FragmentInputPointBinding>() {
 
     @Param
     lateinit var startInfo: StartInfo
+    @Param
+    lateinit var firstHoleInfoList: List<HoleInfo>
+    @Param
+    lateinit var secondHoleInfoList: List<HoleInfo>
     private lateinit var mFirstAdapter: UniRecyclerAdapter
     private lateinit var mSecondAdapter: UniRecyclerAdapter
-    private var mFirstHoleInfoList = makeHeaderInfo(true)
-    private var mSecondHoleInfoList = makeHeaderInfo(false)
+
 
     override fun onPre() {
 
         mFirstAdapter = UniRecyclerAdapter(binder.rvFirst).apply {
-            addSingleItem(mFirstHoleInfoList, HeaderHolder::class.java).addParam("fragment", this@InputPointFragment)
-            addListItem(startInfo.entryList, Holder::class.java).addParam("isFirstHalf", true).addParam("holeInfos", mFirstHoleInfoList)
+            addSingleItem(firstHoleInfoList, HeaderHolder::class.java).addParam("fragment", this@InputPointFragment)
+            addListItem(startInfo.entryList, Holder::class.java).addParam("isFirstHalf", true).addParam("holeInfos", firstHoleInfoList)
         }
         binder.rvFirst.addItemDecoration(DividerItemDeco(context, LinearLayoutManager.VERTICAL))
 
         mSecondAdapter = UniRecyclerAdapter(binder.rvSecond).apply {
-            addSingleItem(mSecondHoleInfoList, HeaderHolder::class.java).addParam("fragment", this@InputPointFragment)
-            addListItem(startInfo.entryList, Holder::class.java).addParam("isFirstHalf", false).addParam("holeInfos", mSecondHoleInfoList)
+            addSingleItem(secondHoleInfoList, HeaderHolder::class.java).addParam("fragment", this@InputPointFragment)
+            addListItem(startInfo.entryList, Holder::class.java).addParam("isFirstHalf", false).addParam("holeInfos", secondHoleInfoList)
         }
         binder.rvSecond.addItemDecoration(DividerItemDeco(context, LinearLayoutManager.VERTICAL))
 
-    }
-
-    private fun makeHeaderInfo(isFirstHalf: Boolean) : List<HoleInfo>{
-        val holeList = mutableListOf<HoleInfo>()
-        repeat(9) {
-            holeList.add(HoleInfo().apply { hole = if(isFirstHalf) (it + 1).toString() else (it + 1 + 9).toString() })
-        }
-        return holeList
-    }
-
-    override fun isOnBackPressed(): Boolean {
-        showConfirm("게임을 종료하시겠습니까?") { _, which ->
-            if (which == DialogInterface.BUTTON_POSITIVE) {
-                activity?.finish()
-            }
-        }
-        return false
     }
 
     @OnClick
     fun showResult(view: View){
         builder.addParam("startInfo", startInfo)
             .addParam("holeInfoList", mutableListOf<HoleInfo>().apply {
-                addAll(mFirstHoleInfoList)
-                addAll(mSecondHoleInfoList)
+                addAll(firstHoleInfoList)
+                addAll(secondHoleInfoList)
             })
             .replace(ResultFragment())
+    }
+
+    @OnClick
+    fun modifyStartInfo(view: View){
+        super.onBackPressed()
     }
 
     internal class Holder(view: View) : UniViewHolder<EntryInfo, PointRowItemBinding>(view) {

@@ -25,7 +25,7 @@ class ResultFragment : BaseFragment<FragmentResultBinding>() {
     lateinit var startInfo: StartInfo
     @Param
     lateinit var holeInfoList: List<HoleInfo>
-    private lateinit var mFirstAdapter: UniRecyclerAdapter
+    private lateinit var mAdapter: UniRecyclerAdapter
 
     override fun onPre() {
         val totalWinningPoint = ResultCalculator.execute(startInfo, holeInfoList)
@@ -36,6 +36,7 @@ class ResultFragment : BaseFragment<FragmentResultBinding>() {
         val resultList = startInfo.entryList.mapIndexed { index, entryInfo ->
                 ResultInfo().apply {
                     name = entryInfo.name
+                    handy = entryInfo.handy
                     totalPoint = totalPointList[index]
                     winningPoint = totalWinningPoint[index]
                 }
@@ -43,7 +44,7 @@ class ResultFragment : BaseFragment<FragmentResultBinding>() {
 
 
 
-        mFirstAdapter = UniRecyclerAdapter(binder.recycler).apply {
+        mAdapter = UniRecyclerAdapter(binder.recycler).apply {
             addSingleItem("", HeaderHolder::class.java)
             addListItem(resultList, Holder::class.java)
         }

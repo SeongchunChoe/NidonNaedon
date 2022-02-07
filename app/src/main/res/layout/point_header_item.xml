@@ -174,8 +174,11 @@
                 android:layout_marginStart="1dp"
                 android:gravity="center"
                 android:textSize="14sp"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par2"
                 android:inputType="number"
                 android:maxLines="1"
+                android:maxLength="1"
                 android:text="@={vm.get(0).par}"
                 tools:text="4" />
 
@@ -188,8 +191,11 @@
                 android:layout_marginStart="1dp"
                 android:gravity="center"
                 android:textSize="14sp"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par3"
                 android:inputType="number"
                 android:maxLines="1"
+                android:maxLength="1"
                 android:text="@={vm.get(1).par}"
                 tools:text="3" />
 
@@ -202,8 +208,11 @@
                 android:layout_marginStart="1dp"
                 android:gravity="center"
                 android:textSize="14sp"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par4"
                 android:inputType="number"
                 android:maxLines="1"
+                android:maxLength="1"
                 android:text="@={vm.get(2).par}"
                 tools:text="5" />
 
@@ -216,8 +225,11 @@
                 android:layout_marginStart="1dp"
                 android:gravity="center"
                 android:textSize="14sp"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par5"
                 android:inputType="number"
                 android:maxLines="1"
+                android:maxLength="1"
                 android:text="@={vm.get(3).par}"
                 tools:text="4" />
 
@@ -230,8 +242,11 @@
                 android:layout_marginStart="1dp"
                 android:gravity="center"
                 android:textSize="14sp"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par6"
                 android:inputType="number"
                 android:maxLines="1"
+                android:maxLength="1"
                 android:text="@={vm.get(4).par}"
                 tools:text="3" />
 
@@ -244,8 +259,11 @@
                 android:layout_marginStart="1dp"
                 android:gravity="center"
                 android:textSize="14sp"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par7"
                 android:inputType="number"
                 android:maxLines="1"
+                android:maxLength="1"
                 android:text="@={vm.get(5).par}"
                 tools:text="5" />
 
@@ -258,8 +276,11 @@
                 android:layout_marginStart="1dp"
                 android:gravity="center"
                 android:textSize="14sp"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par8"
                 android:inputType="number"
                 android:maxLines="1"
+                android:maxLength="1"
                 android:text="@={vm.get(6).par}"
                 tools:text="4" />
 
@@ -272,8 +293,11 @@
                 android:layout_marginStart="1dp"
                 android:gravity="center"
                 android:textSize="14sp"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par9"
                 android:inputType="number"
                 android:maxLines="1"
+                android:maxLength="1"
                 android:text="@={vm.get(7).par}"
                 tools:text="4" />
 
@@ -286,8 +310,11 @@
                 android:layout_marginStart="1dp"
                 android:gravity="center"
                 android:textSize="14sp"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par1"
                 android:inputType="number"
                 android:maxLines="1"
+                android:maxLength="1"
                 android:text="@={vm.get(8).par}"
                 tools:text="4" />
         </LinearLayout>
