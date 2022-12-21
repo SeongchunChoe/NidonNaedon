@@ -318,5 +318,154 @@
                 android:text="@={vm.get(8).par}"
                 tools:text="4" />
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:background="#ECECEC"
+                android:layout_marginTop="1dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="배판"/>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:background="#ECECEC">
+                <CheckBox
+                    android:id="@+id/par1Chk"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:checked="@={vm.get(0).x2}" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:background="#ECECEC">
+                <CheckBox
+                    android:id="@+id/par2Chk"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:checked="@={vm.get(1).x2}" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:background="#ECECEC">
+                <CheckBox
+                    android:id="@+id/par3Chk"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:checked="@={vm.get(2).x2}" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:background="#ECECEC">
+                <CheckBox
+                    android:id="@+id/par4Chk"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:checked="@={vm.get(3).x2}" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:background="#ECECEC">
+                <CheckBox
+                    android:id="@+id/par5Chk"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:checked="@={vm.get(4).x2}" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:background="#ECECEC">
+                <CheckBox
+                    android:id="@+id/par6Chk"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:checked="@={vm.get(5).x2}" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:background="#ECECEC">
+                <CheckBox
+                    android:id="@+id/par7Chk"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:checked="@={vm.get(6).x2}" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:background="#ECECEC">
+                <CheckBox
+                    android:id="@+id/par8Chk"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:checked="@={vm.get(7).x2}" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:background="#ECECEC">
+                <CheckBox
+                    android:id="@+id/par9Chk"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:checked="@={vm.get(8).x2}" />
+            </FrameLayout>
+        </LinearLayout>
     </LinearLayout>
 </layout>

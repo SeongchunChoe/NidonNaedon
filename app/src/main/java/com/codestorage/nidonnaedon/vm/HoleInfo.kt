@@ -25,4 +25,11 @@ class HoleInfo: BaseObservable() {
             field = value
             notifyPropertyChanged(BR.near)
         }
+
+    @Bindable
+    var x2: Boolean = false
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.x2)
+        }
 }

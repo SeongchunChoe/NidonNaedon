@@ -34,6 +34,20 @@ class InputPointFragment : BaseFragment<FragmentInputPointBinding>() {
 
     override fun onPre() {
 
+        //test
+        firstHoleInfoList[0].par = "4"
+        firstHoleInfoList[1].par = "3"
+        firstHoleInfoList[2].par = "4"
+        startInfo.entryList[0].pointsFirst[0].pointStr="0"
+        startInfo.entryList[0].pointsFirst[1].pointStr="0"
+        startInfo.entryList[0].pointsFirst[2].pointStr="2"
+        startInfo.entryList[1].pointsFirst[0].pointStr="-1"
+        startInfo.entryList[1].pointsFirst[1].pointStr="0"
+        startInfo.entryList[1].pointsFirst[2].pointStr="1"
+        startInfo.entryList[2].pointsFirst[0].pointStr="3"
+        startInfo.entryList[2].pointsFirst[1].pointStr="0"
+        startInfo.entryList[2].pointsFirst[2].pointStr="0"
+
         mFirstAdapter = UniRecyclerAdapter(binder.rvFirst).apply {
             addSingleItem(firstHoleInfoList, HeaderHolder::class.java).addParam("fragment", this@InputPointFragment)
             addListItem(startInfo.entryList, Holder::class.java).addParam("isFirstHalf", true).addParam("holeInfos", firstHoleInfoList)
@@ -91,7 +105,8 @@ class InputPointFragment : BaseFragment<FragmentInputPointBinding>() {
 
         @OnClick(ids = [R.id.hole1, R.id.hole2, R.id.hole3, R.id.hole4, R.id.hole5, R.id.hole6, R.id.hole7, R.id.hole8, R.id.hole9])
         fun onClickHole(view: View){
-            val holeIndex = ((view as TextView).text.toString().toInt() % 9) - 1
+            val idx = (view as TextView).text.toString().toInt()
+            val holeIndex = if(idx > 9) idx - 9 - 1 else idx - 1
             val holeInfo = item[holeIndex]
             if(holeInfo.par == "3"){
                 showNearCheckPopup(view.context, holeInfo)

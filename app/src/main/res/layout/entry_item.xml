@@ -9,10 +9,10 @@
             type="com.codestorage.nidonnaedon.vm.EntryInfo" />
     </data>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:gravity="center">
         <TextView
             android:layout_width="120dp"
             android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
             android:layout_marginStart="30dp"
             android:text="@string/label_handy_what"/>
         <TextView
-            android:layout_width="40dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:textSize="@dimen/label_big"
             android:gravity="end"

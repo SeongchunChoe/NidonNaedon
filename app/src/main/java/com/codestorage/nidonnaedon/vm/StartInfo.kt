@@ -6,15 +6,15 @@ import com.codestorage.nidonnaedon.BR
 
 class StartInfo: BaseObservable() {
     val entryList = mutableListOf<EntryInfo>()
-    var buddy: Int = 1
+    var buddy: Int = 1000
         private set
-    var eagle: Int = 3
+    var eagle: Int = 3000
         private set
-    var albatross: Int = 7
+    var albatross: Int = 7000
         private set
-    var holeInOne: Int = 6
+    var holeInOne: Int = 6000
         private set
-    var near: Int = 1
+    var near: Int = 1000
         private set
     var double: Int = 4
         private set
@@ -22,14 +22,7 @@ class StartInfo: BaseObservable() {
         private set
 
     @Bindable
-    var isDoubleStart = false
-        set(value) {
-            field = value
-            notifyPropertyChanged(BR.isDoubleStart)
-        }
-
-    @Bindable
-    var buddyStr: String = "1"
+    var buddyStr: String = "1000"
         set(value) {
             field = value
             buddy = value.toIntOrNull()?:0
@@ -37,7 +30,7 @@ class StartInfo: BaseObservable() {
         }
 
     @Bindable
-    var eagleStr: String = "3"
+    var eagleStr: String = "3000"
         set(value) {
             field = value
             eagle = value.toIntOrNull()?:0
@@ -45,7 +38,7 @@ class StartInfo: BaseObservable() {
         }
 
     @Bindable
-    var albatrossStr: String = "7"
+    var albatrossStr: String = "7000"
         set(value) {
             field = value
             albatross = value.toIntOrNull()?:0
@@ -53,7 +46,7 @@ class StartInfo: BaseObservable() {
         }
 
     @Bindable
-    var holeInOneStr: String = "6"
+    var holeInOneStr: String = "6000"
         set(value) {
             field = value
             holeInOne = value.toIntOrNull()?:0
@@ -61,19 +54,11 @@ class StartInfo: BaseObservable() {
         }
 
     @Bindable
-    var nearStr: String = "1"
+    var nearStr: String = "1000"
         set(value) {
             field = value
             near = value.toIntOrNull()?:0
             notifyPropertyChanged(BR.nearStr)
-        }
-
-    @Bindable
-    var doubleStr: String = "4"
-        set(value) {
-            field = value
-            double = value.toIntOrNull()?:0
-            notifyPropertyChanged(BR.doubleStr)
         }
 
     @Bindable

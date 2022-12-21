@@ -35,59 +35,86 @@
 
             <LinearLayout
                 android:id="@+id/llEntryArea"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:gravity="center_vertical"
+                android:gravity="center|bottom"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textView">
 
-                <EditText
-                    android:id="@+id/etName"
-                    android:layout_width="120dp"
-                    android:layout_height="50dp"
-                    android:gravity="center"
-                    android:hint="@string/label_name"
-                    android:maxLength="6"
-                    android:maxLines="1"
-                    tools:text="나나나나나나"
-                    android:inputType="text"
-                    android:imeOptions="actionNext"
-                    android:nextFocusRight="@+id/etHandy"
-                    android:text="@={entryInfoVm.name}" />
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:endIconMode="none">
 
-                <EditText
-                    android:id="@+id/etHandy"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="10dp"
-                    android:gravity="center"
-                    android:maxLength="3"
-                    android:maxLines="1"
-                    android:imeOptions="actionDone"
-                    android:hint="@string/label_handy"
-                    android:inputType="numberSigned"
-                    tools:text="19"
-                    android:text="@={entryInfoVm.handyStr}" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etName"
+                        android:layout_width="120dp"
+                        android:layout_height="44dp"
+                        android:includeFontPadding="false"
+                        android:inputType="text"
+                        android:maxLength="6"
+                        android:maxLines="1"
+                        android:lineSpacingExtra="0dp"
+                        android:padding="0dp"
+                        android:singleLine="true"
+                        android:hint="@string/label_name"
+                        android:textSize="15sp"
+                        android:imeOptions="actionNext"
+                        android:nextFocusRight="@+id/etHandy"
+                        android:text="@={entryInfoVm.name}"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    app:endIconMode="none">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etHandy"
+                        android:layout_width="100dp"
+                        android:layout_height="44dp"
+                        android:includeFontPadding="false"
+                        android:inputType="numberSigned"
+                        android:maxLength="5"
+                        android:maxLines="1"
+                        android:lineSpacingExtra="0dp"
+                        android:padding="0dp"
+                        android:singleLine="true"
+                        android:hint="@string/label_handy"
+                        android:textSize="15sp"
+                        android:imeOptions="actionDone"
+                        android:nextFocusRight="@+id/etHandy"
+                        android:text="@={entryInfoVm.handyStr}"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
                     android:id="@+id/addPlayer"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:layout_marginStart="30dp"
                     android:enabled="@{entryInfoVm.enable}"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
                     android:text="@string/label_add" />
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="30dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:scrollbars="vertical"
+                android:layout_gravity="center_horizontal"
                 app:layout_constraintBottom_toTopOf="@id/llAddPointArea"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -100,174 +127,151 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="20dp"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recycler">
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/label_double_start"
-                    android:checked="@{startInfoVm.doubleStart}"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/label_danwi"
-                        android:textSize="@dimen/label_middle" />
+                        android:layout_weight="1"
+                        app:endIconMode="none">
 
-                    <EditText
-                        android:id="@+id/etDanwi"
-                        android:layout_width="100dp"
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etDanwi"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:includeFontPadding="false"
+                            android:inputType="number"
+                            android:lineSpacingExtra="0dp"
+                            android:padding="0dp"
+                            android:singleLine="true"
+                            android:hint="타당"
+                            android:nextFocusDown="@+id/etBuddy"
+                            android:text="@={startInfoVm.danwiStr}"
+                            android:textSize="15sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:background="@android:drawable/editbox_background_normal"
-                        android:gravity="center"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLines="1"
-                        android:nextFocusRight="@+id/etBuddy"
-                        android:text="@={startInfoVm.danwiStr}" />
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        app:endIconMode="none">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etBuddy"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:includeFontPadding="false"
+                            android:inputType="number"
+                            android:lineSpacingExtra="0dp"
+                            android:padding="0dp"
+                            android:singleLine="true"
+                            android:hint="@string/label_buddy"
+                            android:text="@={startInfoVm.buddyStr}"
+                            android:nextFocusDown="@+id/etEagle"
+                            android:textSize="15sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        app:endIconMode="none">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etEagle"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:includeFontPadding="false"
+                            android:inputType="number"
+                            android:lineSpacingExtra="0dp"
+                            android:padding="0dp"
+                            android:singleLine="true"
+                            android:hint="@string/label_eagle"
+                            android:text="@={startInfoVm.eagleStr}"
+                            android:nextFocusDown="@+id/etAlbatross"
+                            android:textSize="15sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/label_buddy"
-                        android:textSize="@dimen/label_middle" />
+                        android:layout_weight="1"
+                        app:endIconMode="none">
 
-                    <EditText
-                        android:id="@+id/etBuddy"
-                        android:layout_width="wrap_content"
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etAlbatross"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:includeFontPadding="false"
+                            android:inputType="number"
+                            android:lineSpacingExtra="0dp"
+                            android:padding="0dp"
+                            android:singleLine="true"
+                            android:hint="@string/label_albatross"
+                            android:text="@={startInfoVm.albatrossStr}"
+                            android:nextFocusDown="@+id/etHoleInOne"
+                            android:textSize="15sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:background="@android:drawable/editbox_background_normal"
-                        android:gravity="center"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:maxLines="1"
-                        android:nextFocusRight="@+id/etEagle"
-                        android:text="@={startInfoVm.buddyStr}" />
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        app:endIconMode="none">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etHoleInOne"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:includeFontPadding="false"
+                            android:inputType="number"
+                            android:lineSpacingExtra="0dp"
+                            android:padding="0dp"
+                            android:singleLine="true"
+                            android:hint="@string/label_hole_in_one"
+                            android:text="@={startInfoVm.holeInOneStr}"
+                            android:nextFocusDown="@+id/etNear"
+                            android:textSize="15sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:text="@string/label_eagle"
-                        android:textSize="@dimen/label_middle" />
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        app:endIconMode="none">
 
-                    <EditText
-                        android:id="@+id/etEagle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:background="@android:drawable/editbox_background_normal"
-                        android:gravity="center"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:maxLines="1"
-                        android:nextFocusRight="@+id/etAlbatross"
-                        android:text="@={startInfoVm.eagleStr}" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:text="@string/label_albatross"
-                        android:textSize="@dimen/label_middle" />
-
-                    <EditText
-                        android:id="@+id/etAlbatross"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:background="@android:drawable/editbox_background_normal"
-                        android:gravity="center"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:maxLines="1"
-                        android:nextFocusDown="@+id/etHoleInOne"
-                        android:text="@={startInfoVm.albatrossStr}" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/label_hole_in_one"
-                        android:textSize="@dimen/label_middle" />
-
-                    <EditText
-                        android:id="@+id/etHoleInOne"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:background="@android:drawable/editbox_background_normal"
-                        android:gravity="center"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:maxLines="1"
-                        android:nextFocusRight="@+id/etNear"
-                        android:text="@={startInfoVm.holeInOneStr}" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:text="@string/label_near"
-                        android:textSize="@dimen/label_middle" />
-
-                    <EditText
-                        android:id="@+id/etNear"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:background="@android:drawable/editbox_background_normal"
-                        android:gravity="center"
-                        android:imeOptions="actionNext"
-                        android:inputType="number"
-                        android:maxLength="2"
-                        android:maxLines="1"
-                        android:nextFocusRight="@+id/etDouble"
-                        android:text="@={startInfoVm.nearStr}" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:text="@string/label_double"
-                        android:textSize="@dimen/label_middle" />
-
-                    <EditText
-                        android:id="@+id/etDouble"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:background="@android:drawable/editbox_background_normal"
-                        android:gravity="center"
-                        android:imeOptions="actionDone"
-                        android:inputType="number"
-                        android:maxLength="1"
-                        android:maxLines="1"
-                        android:text="@={startInfoVm.doubleStr}" />
-
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etNear"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:includeFontPadding="false"
+                            android:inputType="number"
+                            android:lineSpacingExtra="0dp"
+                            android:padding="0dp"
+                            android:singleLine="true"
+                            android:hint="@string/label_near"
+                            android:text="@={startInfoVm.nearStr}"
+                            android:nextFocusDown="@+id/etDouble"
+                            android:textSize="15sp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
             </LinearLayout>
             <Button
@@ -275,7 +279,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/button_start_game"
-                android:layout_marginBottom="20dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"/>
         </androidx.appcompat.widget.LinearLayoutCompat>

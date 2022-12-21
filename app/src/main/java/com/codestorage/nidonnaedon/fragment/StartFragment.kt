@@ -30,6 +30,22 @@ class StartFragment : BaseFragment<FragmentStartBinding>() {
         binder.startInfoVm = startInfo
         binder.entryInfoVm = EntryInfo()
 
+        //test
+        startInfo.entryList.apply {
+            add(EntryInfo().apply {
+                name = "ㄱ"
+                handyStr = "5000"
+            })
+            add(EntryInfo().apply {
+                name = "ㄴ"
+                handyStr = "-5000"
+            })
+            add(EntryInfo().apply {
+                name = "ㄷ"
+                handyStr = "0"
+            })
+        }
+
         mAdapter = UniRecyclerAdapter(binder.recycler).apply {
             addListItem(startInfo.entryList, Holder::class.java)
         }
