@@ -39,18 +39,18 @@ class InputPointFragment : BaseFragment<FragmentInputPointBinding>() {
     override fun onPre() {
 
         //test
-        firstHoleInfoList[0].par = "4"
-        firstHoleInfoList[1].par = "3"
-        firstHoleInfoList[2].par = "4"
-        startInfo.entryList[0].pointsFirst[0].pointStr="0"
-        startInfo.entryList[0].pointsFirst[1].pointStr="0"
-        startInfo.entryList[0].pointsFirst[2].pointStr="2"
-        startInfo.entryList[1].pointsFirst[0].pointStr="-1"
-        startInfo.entryList[1].pointsFirst[1].pointStr="0"
-        startInfo.entryList[1].pointsFirst[2].pointStr="1"
-        startInfo.entryList[2].pointsFirst[0].pointStr="3"
-        startInfo.entryList[2].pointsFirst[1].pointStr="0"
-        startInfo.entryList[2].pointsFirst[2].pointStr="0"
+//        firstHoleInfoList[0].par = "4"
+//        firstHoleInfoList[1].par = "3"
+//        firstHoleInfoList[2].par = "4"
+//        startInfo.entryList[0].pointsFirst[0].pointStr="0"
+//        startInfo.entryList[0].pointsFirst[1].pointStr="0"
+//        startInfo.entryList[0].pointsFirst[2].pointStr="2"
+//        startInfo.entryList[1].pointsFirst[0].pointStr="-1"
+//        startInfo.entryList[1].pointsFirst[1].pointStr="0"
+//        startInfo.entryList[1].pointsFirst[2].pointStr="1"
+//        startInfo.entryList[2].pointsFirst[0].pointStr="3"
+//        startInfo.entryList[2].pointsFirst[1].pointStr="0"
+//        startInfo.entryList[2].pointsFirst[2].pointStr="0"
 
         mFirstAdapter = UniRecyclerAdapter(binder.rvFirst).apply {
             addSingleItem(firstHoleInfoList, HeaderHolder::class.java).addParam("fragment", this@InputPointFragment)
