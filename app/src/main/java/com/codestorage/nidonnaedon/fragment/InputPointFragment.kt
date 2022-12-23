@@ -1,11 +1,15 @@
 package com.codestorage.nidonnaedon.fragment
 
 import android.content.Context
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.codestorage.nidonnaedon.*
 import com.codestorage.nidonnaedon.common.BaseFragment
+import com.codestorage.nidonnaedon.common.BindAdapters
 import com.codestorage.nidonnaedon.common.DividerItemDeco
 import com.codestorage.nidonnaedon.databinding.*
 import com.codestorage.nidonnaedon.vm.EntryInfo
@@ -77,6 +81,28 @@ class InputPointFragment : BaseFragment<FragmentInputPointBinding>() {
         super.onBackPressed()
     }
 
+    fun setPointBackground(fl: FrameLayout, hole: String, point: String) {
+        if(hole.isNullOrEmpty() || point.isNullOrEmpty()){
+            fl.setBackgroundColor(fl.context.getColor(R.color.white))
+        }else{
+            val holeInt = hole.toInt()
+            val pointInt = point.toInt()
+            if(pointInt == holeInt){
+                fl.setBackgroundResource(R.drawable.bg_double_par)
+            }else if(pointInt == 1){
+                fl.setBackgroundResource(R.drawable.bg_bogey)
+            }else if(pointInt > 1){
+                fl.setBackgroundResource(R.drawable.bg_double_bogey)
+            }else if(pointInt == -1){
+                fl.setBackgroundResource(R.drawable.bg_buddy)
+            }else if(pointInt < -1){
+                fl.setBackgroundResource(R.drawable.bg_eagle)
+            }else {
+                fl.setBackgroundColor(fl.context.getColor(R.color.white))
+            }
+        }
+    }
+
     internal class Holder(view: View) : UniViewHolder<EntryInfo, PointRowItemBinding>(view) {
 
         @Param
@@ -89,7 +115,27 @@ class InputPointFragment : BaseFragment<FragmentInputPointBinding>() {
             binder.vm = item
             binder.holeInfos = holeInfos
             binder.myIdx = itemPosition
+            binder.par1.addTextChangedListener(PointInputTextWatcher(binder.par1.parent as FrameLayout, holeInfos[0]))
+            binder.par2.addTextChangedListener(PointInputTextWatcher(binder.par2.parent as FrameLayout, holeInfos[1]))
+            binder.par3.addTextChangedListener(PointInputTextWatcher(binder.par3.parent as FrameLayout, holeInfos[2]))
+            binder.par4.addTextChangedListener(PointInputTextWatcher(binder.par4.parent as FrameLayout, holeInfos[3]))
+            binder.par5.addTextChangedListener(PointInputTextWatcher(binder.par5.parent as FrameLayout, holeInfos[4]))
+            binder.par6.addTextChangedListener(PointInputTextWatcher(binder.par6.parent as FrameLayout, holeInfos[5]))
+            binder.par7.addTextChangedListener(PointInputTextWatcher(binder.par7.parent as FrameLayout, holeInfos[6]))
+            binder.par8.addTextChangedListener(PointInputTextWatcher(binder.par8.parent as FrameLayout, holeInfos[7]))
+            binder.par9.addTextChangedListener(PointInputTextWatcher(binder.par9.parent as FrameLayout, holeInfos[8]))
+        }
 
+    }
+
+    internal class PointInputTextWatcher(private val parent: FrameLayout, val hole: HoleInfo): TextWatcher {
+        override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+        override fun afterTextChanged(editable: Editable?) {
+            val point = editable.toString()
+            BindAdapters.bindingPointBackground(parent, hole.par, point)
         }
 
     }

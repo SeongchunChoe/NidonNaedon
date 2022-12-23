@@ -26,183 +26,308 @@
             android:id="@+id/name"
             android:layout_width="100dp"
             android:layout_height="30dp"
-            android:background="@drawable/bg_near_nor"
             android:gravity="center"
             android:textStyle="bold"
+            android:background="@color/white"
             tools:text="홍길동"
             android:text="@{vm.name}"/>
 
-        <EditText
-            android:id="@+id/par1"
+        <FrameLayout
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
-            near_background_near_idx="@{holeInfos.get(0).near}"
-            near_background_my_idx="@{myIdx}"
-            tools:background="#FFFFFF"
             android:layout_marginStart="1dp"
-            android:gravity="center"
-            android:textSize="14sp"
-            android:imeOptions="actionNext"
-            android:nextFocusRight="@+id/par2"
-            android:inputType="numberSigned"
-            android:maxLines="1"
-            android:maxLength="2"
-            android:padding="0dp"
-            android:text="@={points.get(0).pointStr}"
-            tools:text="4" />
+            android:background="@color/white">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                near_background_near_idx="@{holeInfos.get(0).near}"
+                near_background_my_idx="@{myIdx}"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:src="@drawable/ic_timeline_new_badge"/>
+            <EditText
+                android:id="@+id/par1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:background="@null"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par2"
+                android:inputType="numberSigned"
+                android:maxLines="1"
+                android:maxLength="2"
+                android:padding="0dp"
+                android:text="@={points.get(0).pointStr}"
+                tools:text="4" />
+        </FrameLayout>
 
-        <EditText
-            android:id="@+id/par2"
+        <FrameLayout
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
-            near_background_near_idx="@{holeInfos.get(1).near}"
-            near_background_my_idx="@{myIdx}"
-            tools:background="#FFFFFF"
             android:layout_marginStart="1dp"
-            android:gravity="center"
-            android:textSize="14sp"
-            android:imeOptions="actionNext"
-            android:nextFocusRight="@+id/par3"
-            android:inputType="numberSigned"
-            android:maxLines="1"
-            android:maxLength="2"
-            android:text="@={points.get(1).pointStr}"
-            tools:text="3" />
+            android:background="@color/white">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                near_background_near_idx="@{holeInfos.get(1).near}"
+                near_background_my_idx="@{myIdx}"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:src="@drawable/ic_timeline_new_badge"/>
+            <EditText
+                android:id="@+id/par2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:background="@null"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par2"
+                android:inputType="numberSigned"
+                android:maxLines="1"
+                android:maxLength="2"
+                android:padding="0dp"
+                android:text="@={points.get(1).pointStr}"
+                tools:text="4" />
+        </FrameLayout>
 
-        <EditText
-            android:id="@+id/par3"
+        <FrameLayout
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
-            near_background_near_idx="@{holeInfos.get(2).near}"
-            near_background_my_idx="@{myIdx}"
-            tools:background="#FFFFFF"
             android:layout_marginStart="1dp"
-            android:gravity="center"
-            android:textSize="14sp"
-            android:imeOptions="actionNext"
-            android:nextFocusRight="@+id/par4"
-            android:inputType="numberSigned"
-            android:maxLines="1"
-            android:maxLength="2"
-            android:text="@={points.get(2).pointStr}"
-            tools:text="5" />
+            android:background="@color/white">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                near_background_near_idx="@{holeInfos.get(2).near}"
+                near_background_my_idx="@{myIdx}"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:src="@drawable/ic_timeline_new_badge"/>
+            <EditText
+                android:id="@+id/par3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:background="@null"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par2"
+                android:inputType="numberSigned"
+                android:maxLines="1"
+                android:maxLength="2"
+                android:padding="0dp"
+                android:text="@={points.get(2).pointStr}"
+                tools:text="4" />
+        </FrameLayout>
 
-        <EditText
-            android:id="@+id/par4"
+        <FrameLayout
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
-            near_background_near_idx="@{holeInfos.get(3).near}"
-            near_background_my_idx="@{myIdx}"
-            tools:background="#FFFFFF"
             android:layout_marginStart="1dp"
-            android:gravity="center"
-            android:textSize="14sp"
-            android:imeOptions="actionNext"
-            android:nextFocusRight="@+id/par5"
-            android:inputType="numberSigned"
-            android:maxLines="1"
-            android:maxLength="2"
-            android:text="@={points.get(3).pointStr}"
-            tools:text="4" />
+            android:background="@color/white">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                near_background_near_idx="@{holeInfos.get(3).near}"
+                near_background_my_idx="@{myIdx}"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:src="@drawable/ic_timeline_new_badge"/>
+            <EditText
+                android:id="@+id/par4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:background="@null"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par2"
+                android:inputType="numberSigned"
+                android:maxLines="1"
+                android:maxLength="2"
+                android:padding="0dp"
+                android:text="@={points.get(3).pointStr}"
+                tools:text="4" />
+        </FrameLayout>
 
-        <EditText
-            android:id="@+id/par5"
+        <FrameLayout
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
-            near_background_near_idx="@{holeInfos.get(4).near}"
-            near_background_my_idx="@{myIdx}"
-            tools:background="#FFFFFF"
             android:layout_marginStart="1dp"
-            android:gravity="center"
-            android:textSize="14sp"
-            android:imeOptions="actionNext"
-            android:nextFocusRight="@+id/par6"
-            android:inputType="numberSigned"
-            android:maxLines="1"
-            android:maxLength="2"
-            android:text="@={points.get(4).pointStr}"
-            tools:text="3" />
+            android:background="@color/white">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                near_background_near_idx="@{holeInfos.get(4).near}"
+                near_background_my_idx="@{myIdx}"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:src="@drawable/ic_timeline_new_badge"/>
+            <EditText
+                android:id="@+id/par5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:background="@null"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par2"
+                android:inputType="numberSigned"
+                android:maxLines="1"
+                android:maxLength="2"
+                android:padding="0dp"
+                android:text="@={points.get(4).pointStr}"
+                tools:text="4" />
+        </FrameLayout>
 
-        <EditText
-            android:id="@+id/par6"
+        <FrameLayout
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
-            near_background_near_idx="@{holeInfos.get(5).near}"
-            near_background_my_idx="@{myIdx}"
-            tools:background="#FFFFFF"
             android:layout_marginStart="1dp"
-            android:gravity="center"
-            android:textSize="14sp"
-            android:imeOptions="actionNext"
-            android:nextFocusRight="@+id/par7"
-            android:inputType="numberSigned"
-            android:maxLines="1"
-            android:maxLength="2"
-            android:text="@={points.get(5).pointStr}"
-            tools:text="5" />
+            android:background="@color/white">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                near_background_near_idx="@{holeInfos.get(5).near}"
+                near_background_my_idx="@{myIdx}"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:src="@drawable/ic_timeline_new_badge"/>
+            <EditText
+                android:id="@+id/par6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:background="@null"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par2"
+                android:inputType="numberSigned"
+                android:maxLines="1"
+                android:maxLength="2"
+                android:padding="0dp"
+                android:text="@={points.get(5).pointStr}"
+                tools:text="4" />
+        </FrameLayout>
 
-        <EditText
-            android:id="@+id/par7"
+        <FrameLayout
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
-            near_background_near_idx="@{holeInfos.get(6).near}"
-            near_background_my_idx="@{myIdx}"
-            tools:background="@drawable/bg_near"
             android:layout_marginStart="1dp"
-            android:gravity="center"
-            android:textSize="14sp"
-            android:imeOptions="actionNext"
-            android:nextFocusRight="@+id/par8"
-            android:inputType="numberSigned"
-            android:maxLines="1"
-            android:maxLength="2"
-            android:text="@={points.get(6).pointStr}"
-            tools:text="4" />
+            android:background="@color/white">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                near_background_near_idx="@{holeInfos.get(6).near}"
+                near_background_my_idx="@{myIdx}"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:src="@drawable/ic_timeline_new_badge"/>
+            <EditText
+                android:id="@+id/par7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:background="@null"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par2"
+                android:inputType="numberSigned"
+                android:maxLines="1"
+                android:maxLength="2"
+                android:padding="0dp"
+                android:text="@={points.get(6).pointStr}"
+                tools:text="4" />
+        </FrameLayout>
 
-        <EditText
-            android:id="@+id/par8"
+        <FrameLayout
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
-            near_background_near_idx="@{holeInfos.get(7).near}"
-            near_background_my_idx="@{myIdx}"
-            tools:background="#FFFFFF"
             android:layout_marginStart="1dp"
-            android:gravity="center"
-            android:textSize="14sp"
-            android:imeOptions="actionNext"
-            android:nextFocusRight="@+id/par9"
-            android:inputType="numberSigned"
-            android:maxLines="1"
-            android:maxLength="2"
-            android:text="@={points.get(7).pointStr}"
-            tools:text="4" />
+            android:background="@color/white">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                near_background_near_idx="@{holeInfos.get(7).near}"
+                near_background_my_idx="@{myIdx}"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:src="@drawable/ic_timeline_new_badge"/>
+            <EditText
+                android:id="@+id/par8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:background="@null"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par2"
+                android:inputType="numberSigned"
+                android:maxLines="1"
+                android:maxLength="2"
+                android:padding="0dp"
+                android:text="@={points.get(7).pointStr}"
+                tools:text="4" />
+        </FrameLayout>
 
-        <EditText
-            android:id="@+id/par9"
+        <FrameLayout
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
-            near_background_near_idx="@{holeInfos.get(8).near}"
-            near_background_my_idx="@{myIdx}"
-            tools:background="#FFFFFF"
             android:layout_marginStart="1dp"
-            android:gravity="center"
-            android:textSize="14sp"
-            android:imeOptions="actionNext"
-            android:nextFocusRight="@+id/par1"
-            android:inputType="numberSigned"
-            android:maxLines="1"
-            android:maxLength="2"
-            android:text="@={points.get(8).pointStr}"
-            tools:text="4" />
+            android:background="@color/white">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                near_background_near_idx="@{holeInfos.get(8).near}"
+                near_background_my_idx="@{myIdx}"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:src="@drawable/ic_timeline_new_badge"/>
+            <EditText
+                android:id="@+id/par9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:background="@null"
+                android:imeOptions="actionNext"
+                android:nextFocusRight="@+id/par1"
+                android:inputType="numberSigned"
+                android:maxLines="1"
+                android:maxLength="2"
+                android:padding="0dp"
+                android:text="@={points.get(8).pointStr}"
+                tools:text="4" />
+        </FrameLayout>
     </LinearLayout>
 
 </layout>

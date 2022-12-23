@@ -30,7 +30,7 @@ object ResultCalculator {
         return earnList
     }
 
-    private fun isNextDouble(startInfo: StartInfo, par: String, pointList: IntArray) =
+    fun isNextDouble(startInfo: StartInfo, par: String, pointList: IntArray) =
         par.isNotEmpty() && (
                 pointList.maxOrNull()!! > par.toInt()-1//양파 이상
                 || pointList.count { it == pointList[0] } == startInfo.entryList.size//전원이 동타

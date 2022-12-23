@@ -3,9 +3,14 @@ package com.codestorage.nidonnaedon.common
 import android.annotation.SuppressLint
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.icu.number.NumberRangeFormatter
+import android.view.View
 import android.widget.EditText
+import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import androidx.databinding.InverseBindingMethod
 import com.codestorage.nidonnaedon.R
 import java.text.NumberFormat
 import java.util.*
@@ -13,11 +18,35 @@ import java.util.*
 object BindAdapters {
     @BindingAdapter(value = ["near_background_near_idx", "near_background_my_idx"], requireAll = true)
     @JvmStatic
-    fun bindingNearBackground(et: EditText, nearIdx: Int, myIdx: Int) {
+    fun bindingNearBackground(iv: ImageView, nearIdx: Int, myIdx: Int) {
         if(nearIdx != -1 && nearIdx == myIdx){
-            et.setBackgroundResource(R.drawable.bg_near)
+            iv.visibility = View.VISIBLE
         }else{
-            et.setBackgroundResource(R.drawable.bg_near_nor)
+            iv.visibility = View.INVISIBLE
+        }
+    }
+
+    @BindingAdapter(value = ["point_background_hole", "point_background_point"], requireAll = true)
+    @JvmStatic
+    fun bindingPointBackground(fl: FrameLayout, hole: String, point: String) {
+        if(hole.isNullOrEmpty() || point.isNullOrEmpty() || point == "-"){
+            fl.setBackgroundColor(fl.context.getColor(R.color.white))
+        }else{
+            val holeInt = hole.toInt()
+            val pointInt = point.toInt()
+            if(pointInt == holeInt){
+                fl.setBackgroundResource(R.drawable.bg_double_par)
+            }else if(pointInt == 1){
+                fl.setBackgroundResource(R.drawable.bg_bogey)
+            }else if(pointInt > 1){
+                fl.setBackgroundResource(R.drawable.bg_double_bogey)
+            }else if(pointInt == -1){
+                fl.setBackgroundResource(R.drawable.bg_buddy)
+            }else if(pointInt < -1){
+                fl.setBackgroundResource(R.drawable.bg_eagle)
+            }else {
+                fl.setBackgroundColor(fl.context.getColor(R.color.white))
+            }
         }
     }
 

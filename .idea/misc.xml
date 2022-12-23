@@ -4,7 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/Sdk/platforms/android-31/data/res/drawable/btn_plus.xml" value="0.166" />
-        <entry key="..\:/project/NidonNaedon/app/src/main/res/drawable/bg_near.xml" value="0.556923076923077" />
+        <entry key="..\:/project/NidonNaedon/app/src/main/res/drawable/bg_bogey.xml" value="0.2265" />
+        <entry key="..\:/project/NidonNaedon/app/src/main/res/drawable/bg_buddy.xml" value="0.2265" />
+        <entry key="..\:/project/NidonNaedon/app/src/main/res/drawable/bg_double_bogey.xml" value="0.2265" />
+        <entry key="..\:/project/NidonNaedon/app/src/main/res/drawable/bg_double_par.xml" value="0.2265" />
+        <entry key="..\:/project/NidonNaedon/app/src/main/res/drawable/bg_eagle.xml" value="0.2265" />
+        <entry key="..\:/project/NidonNaedon/app/src/main/res/drawable/bg_near.xml" value="0.25" />
         <entry key="..\:/project/NidonNaedon/app/src/main/res/drawable/bg_near_nor.xml" value="0.43854166666666666" />
         <entry key="..\:/project/NidonNaedon/app/src/main/res/drawable/ic_launcher_background.xml" value="0.556923076923077" />
         <entry key="..\:/project/NidonNaedon/app/src/main/res/drawable/list_vertical_divider.xml" value="0.565625" />
@@ -18,7 +23,7 @@
         <entry key="..\:/project/NidonNaedon/app/src/main/res/layout/fragment_start_temp.xml" value="0.32447916666666665" />
         <entry key="..\:/project/NidonNaedon/app/src/main/res/layout/point_header_item.xml" value="0.33" />
         <entry key="..\:/project/NidonNaedon/app/src/main/res/layout/point_par_item.xml" value="0.5494791666666666" />
-        <entry key="..\:/project/NidonNaedon/app/src/main/res/layout/point_row_item.xml" value="0.25" />
+        <entry key="..\:/project/NidonNaedon/app/src/main/res/layout/point_row_item.xml" value="0.5" />
         <entry key="..\:/project/NidonNaedon/app/src/main/res/layout/result_header_item.xml" value="0.25" />
         <entry key="..\:/project/NidonNaedon/app/src/main/res/layout/result_item.xml" value="0.22" />
       </map>
